@@ -1,0 +1,14 @@
+{
+  "name": "Nutri SaaS - Node.js",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Nutri SaaS",
+      "onAutoForward": "openPreview",
+      "visibility": "private"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "npm run dev"
+}

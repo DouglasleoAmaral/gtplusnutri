@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Plataforma de atendimento e cálculos para nutricionistas.">
+  <title>NutriGestor</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <main id="loginView" class="login-shell">
+    <section class="login-brand">
+      <div class="brand-mark">N</div>
+      <p class="eyebrow">Plataforma SaaS para nutrição</p>
+      <h1>Atenda, calcule e acompanhe em um só lugar.</h1>
+      <p>Licenças liberadas pelo administrador, painel da nutricionista e acesso exclusivo do paciente.</p>
+      <div class="feature-list">
+        <span>✓ Gestão de licenças por dias</span>
+        <span>✓ Cadastro de nutricionistas e pacientes</span>
+        <span>✓ Avaliação antropométrica e energética</span>
+        <span>✓ Plano alimentar e diário do paciente</span>
+      </div>
+    </section>
+
+    <section class="login-card">
+      <div class="mobile-brand"><div class="brand-mark">N</div><strong>NutriGestor</strong></div>
+      <h2>Entrar na plataforma</h2>
+      <p>Use o acesso de administrador, nutricionista ou paciente.</p>
+      <form id="loginForm" class="form-stack">
+        <label>E-mail<input id="loginEmail" type="email" required autocomplete="username" placeholder="seu@email.com"></label>
+        <label>Senha<input id="loginPassword" type="password" required autocomplete="current-password" placeholder="••••••••"></label>
+        <button class="btn primary" type="submit">Entrar</button>
+      </form>
+      <div class="demo-note">
+        <strong>Primeiro acesso:</strong> configure o administrador no arquivo <code>.env</code>.
+      </div>
+    </section>
+  </main>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark small">N</div>
+        <div><strong>NutriGestor</strong><span>Gestão clínica</span></div>
+      </div>
+      <nav id="navMenu"></nav>
+      <div class="sidebar-footer">
+        <div id="userMini" class="user-mini"></div>
+        <button id="logoutBtn" class="btn ghost full">Sair</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn" aria-label="Abrir menu">☰</button>
+        <div>
+          <p class="eyebrow" id="pageKicker">Painel</p>
+          <h2 id="pageTitle">Visão geral</h2>
+        </div>
+        <div id="planBadge" class="plan-badge"></div>
+      </header>
+      <div id="content" class="content"></div>
+    </section>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
